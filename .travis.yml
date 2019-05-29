@@ -6,6 +6,7 @@ sudo: required
 # cache:
 #   yarn: true
 
+# install latest yarn
 before_install:
   - which yarn
   - yarn --version
@@ -18,7 +19,7 @@ before_install:
   - sudo apt-get -y update && sudo apt-get install -y yarn
   - which yarn
   - yarn --version
-  
+
 language: node_js
 node_js:
   - "11.3.0"
