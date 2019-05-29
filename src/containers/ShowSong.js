@@ -65,7 +65,7 @@ chooseSong = () => {
         <div>
         {
           this.props.loading?
-          <div className="center"><img src={logo} /></div>
+          <div className="center"><img src={logo} alt="loading img" /></div>
           :
           <p>{lyrics ? lyrics.lyrics_body : null}</p>
         }

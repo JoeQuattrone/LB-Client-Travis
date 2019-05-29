@@ -27,7 +27,7 @@ class Songs extends React.Component {
           <h6 id="tracks-title">TRACKS</h6>
           {
             this.props.loading?
-            <div className="center"><img src={logo} /></div>
+            <div className="center"><img src={logo} alt="loading img" /></div>
             :
             <div className="row search-results-container">{this.listSongs()}</div>
           }

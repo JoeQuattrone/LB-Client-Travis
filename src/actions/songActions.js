@@ -1,6 +1,6 @@
 const axios = require('axios');
 const BASE_URL = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/"
-const API_KEY = "&apikey=523ebe747e1a258aaddd09f97f90cb70"
+// const API_KEY = "&apikey=523ebe747e1a258aaddd09f97f90cb70"
 
 export function fetchSongs(state, history) {
   const url = BASE_URL + `track.search?q_track=${state.songTitle}&page_size=10&page=1&s_track_rating=desc&apikey=523ebe747e1a258aaddd09f97f90cb70`

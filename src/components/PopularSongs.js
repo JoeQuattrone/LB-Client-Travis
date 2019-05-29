@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchPopularSongs } from '../actions/songActions'
-import SongCard from './SongCard'
 import SongRow from './SongRow'
 
 class PopularSongs extends React.Component {

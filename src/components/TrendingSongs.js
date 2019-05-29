@@ -25,7 +25,7 @@ class TrendingSongs extends React.Component {
       <>
         <h4 className="home-heading">Most liked songs</h4>
         {
-          this.state.trendingSongs.length === 0 ? <div className="center"><img src={logo} /></div>
+          this.state.trendingSongs.length === 0 ? <div className="center"><img src={logo} alt="loading img"/></div>
         :
           <div className="row white-row">{this.renderTrendingSongs()}</div>
         }
