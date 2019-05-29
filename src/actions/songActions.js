@@ -3,6 +3,7 @@ const BASE_URL = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/
 // const API_KEY = "&apikey=523ebe747e1a258aaddd09f97f90cb70"
 
 export function fetchSongs(state, history) {
+  debugger
   const url = BASE_URL + `track.search?q_track=${state.songTitle}&page_size=10&page=1&s_track_rating=desc&apikey=523ebe747e1a258aaddd09f97f90cb70`
   return (dispatch) => {
     dispatch({ type: 'LOADING_SONG' })
