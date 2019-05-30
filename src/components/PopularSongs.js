@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchPopularSongs } from '../actions/songActions'
 import SongRow from './SongRow'
 
-class PopularSongs extends React.Component {
+export class PopularSongs extends React.Component {
   componentDidMount() {
     this.props.fetchPopularSongs()
   }

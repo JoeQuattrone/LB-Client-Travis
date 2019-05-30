@@ -6,7 +6,6 @@ import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import logo from '../images/Ajax-loader.gif'
 
-import LyricsWord from '../components/ShowSong/LyricsWord'
 
 
 class ShowSong extends React.Component {
@@ -52,7 +51,7 @@ chooseSong = () => {
     let lyrics = this.props.lyrics
     return (
       <div id="show-song-container" className="container">
-        <LyricsWord />
+        <h5 className="lyrics-title">Lyrics</h5>
         <div id="show-row" className="row">
           <h2 className=" col s10 song-header">{song ? song.track.track_name :  null }</h2>
           <div className="col s2 heart-div">
