@@ -12,7 +12,7 @@ Enzyme.configure({ adapter: new Adapter() })
 describe('<PopularSongs />', () => {
   const songs = [{track_name: "Lose Yourself", artist_name: "Eminem", genre: 'rap', likes: "5 likes"}, {track_name: "Lose Yourself to Dance", artist_name: "Calvin Harriss", genre: 'EDM', likes: "6 likes"}]
 
-  it('Connects to Redux store and renders <SongRow />', () => {
+  it('Dispatches a fetch request to collect popular songs then connects to Redux store and renders <SongRow />', () => {
     const store = mockStore({})
     const wrapper = shallow(<PopularSongs fetchPopularSongs={jest.fn()}/>)
     expect(wrapper.props().popularSongs).toBe.defined;
