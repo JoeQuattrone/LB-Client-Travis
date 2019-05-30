@@ -22,7 +22,6 @@ export default function songsReducer(state = {
     return {...state, loading: true}
 
     case 'ADD_POPULAR_SONGS':
-    debugger
     return {...state, loading: false, popularSongs: action.payload}
 
     default:

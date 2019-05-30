@@ -37,8 +37,3 @@ export function fetchPopularSongs() {
       .then(json => dispatch({ type: 'ADD_POPULAR_SONGS', payload: json }))
   }
 }
-
-//
-// const url = 'http://localhost:3001/popular_songs'
-
-// https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=13873035&apikey=523ebe747e1a258aaddd09f97f90cb70`

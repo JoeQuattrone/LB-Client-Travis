@@ -37,6 +37,4 @@ describe('songsReducer reducer', () => {
       })
     ).toEqual({loading: false, lyrics: songWithLyrics})
   })
-
-
 })

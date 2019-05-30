@@ -6,7 +6,7 @@ import ShowSong from './containers/ShowSong'
 import './App.css';
 import { connect } from 'react-redux'
 import { fetchSongs } from './actions/songActions'
-import ErrorPage from './containers/ErrorPage'
+import ErrorPage from './components/ErrorPage'
 
 
 class App extends React.Component {

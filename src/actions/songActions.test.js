@@ -86,8 +86,8 @@ describe('fetchLyrics action', () => {
       .then(() => { // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
       })
-    })
   })
+})
 
 
 
@@ -101,11 +101,7 @@ describe('fetchPopularSongs action', () => {
     const url = 'http://localhost:3001/popular_songs'
 
     fetchMock.getOnce(url, {
-        body: [
-          {1: "song1"}, {2: "song2"}, {3: "song3"}, {4: "song4"}, {5: "song5"}, {6: "song6"}
-        ]
-
-
+        body: [{1: "song1"}, {2: "song2"}, {3: "song3"}, {4: "song4"}, {5: "song5"}, {6: "song6"}]
     })
 
     const expectedActions = [
@@ -121,5 +117,5 @@ describe('fetchPopularSongs action', () => {
       .then(() => { // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
       })
-    })
+  })
 })
