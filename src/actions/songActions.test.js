@@ -40,9 +40,9 @@ describe('fetchSongs action', () => {
 
     const expectedActions = [
       {type: 'LOADING_SONG'},
-      { type: "ADD_SONG", payload: [
+      {type: "ADD_SONG", payload: [
         {track: {artist_name: "Eminem", track_name: "Lose Yourself"}}, {track: {artist_name: "Daft Punk feat. Pharrell Williams", track_name: "Lose Yourself to Dance"}}
-      ] }
+      ]}
     ]
 
     const store = mockStore({})
@@ -50,7 +50,7 @@ describe('fetchSongs action', () => {
 
     return store.dispatch(actions.fetchSongs(state))
       .then(() => { // return of async actions
-        expect(store.getActions()).toContain({type: "LOADING_SONG"})
+        expect(store.getActions()).toHaveLength(2)
       })
   })
 })
