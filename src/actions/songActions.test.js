@@ -36,8 +36,6 @@ describe('fetchSongs action', () => {
       }
     })
 
-
-
     const expectedActions = [
       {type: 'LOADING_SONG'},
       {type: "ADD_SONG", payload: [
@@ -85,6 +83,41 @@ describe('fetchLyrics action', () => {
     global.fetch = fetch
 
     return store.dispatch(actions.fetchLyrics(trackId))
+      .then(() => { // return of async actions
+        expect(store.getActions()).toEqual(expectedActions)
+      })
+    })
+  })
+
+
+
+describe('fetchPopularSongs action', () => {
+  afterEach(() => {
+    fetchMock.restore()
+  })
+
+
+  it('uses redux-promise to create an action object with type of "ADD_POPULAR_SONGS" and a payload of popular songs when fetchPopularSongs is dispatched', () => {
+    const url = 'http://localhost:3001/popular_songs'
+
+    fetchMock.getOnce(url, {
+        body: [
+          {1: "song1"}, {2: "song2"}, {3: "song3"}, {4: "song4"}, {5: "song5"}, {6: "song6"}
+        ]
+
+
+    })
+
+    const expectedActions = [
+      {type: 'LOADING_POPULAR_SONGS'},
+      {type: "ADD_POPULAR_SONGS", payload:
+        [{1: "song1"}, {2: "song2"}, {3: "song3"}, {4: "song4"}, {5: "song5"}, {6: "song6"}]
+      }]
+
+    const store = mockStore({})
+    global.fetch = fetch
+
+    return store.dispatch(actions.fetchPopularSongs())
       .then(() => { // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
       })
