@@ -4,7 +4,6 @@ import Adapter from 'enzyme-adapter-react-16'
 import SongSearch from './SongSearch'
 import sinon from "sinon";
 
-
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('<SongSearch />', () => {

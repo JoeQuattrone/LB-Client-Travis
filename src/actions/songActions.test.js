@@ -8,6 +8,8 @@ import fetchMock from 'fetch-mock'
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
 const BASE_URL = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/"
+const key = process.env.REACT_APP_API_KEY
+
 
 
 describe('fetchSongs action', () => {
@@ -18,7 +20,7 @@ describe('fetchSongs action', () => {
   const state = {songTitle: "Lose Yourself"}
 
   it('uses redux-promise to create an action object with type of "ADD_SONG" and a payload of songs when fetchSongs is dispatched', () => {
-    const mockSongQuery = `track.search?q_track=${state.songTitle}&page_size=10&page=1&s_track_rating=desc&apikey=523ebe747e1a258aaddd09f97f90cb70`
+    const mockSongQuery = `track.search?q_track=${state.songTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${key}`
 
     const url = BASE_URL + mockSongQuery
 
@@ -61,7 +63,7 @@ describe('fetchLyrics action', () => {
   const trackId = 1809819
 
   it('uses redux-promise to create an action object with type of "ADD_LYRICS" and a payload of songs when fetchLyrics is dispatched', () => {
-    const mockLyricsQuery = `track.lyrics.get?track_id=${trackId}&apikey=523ebe747e1a258aaddd09f97f90cb70`
+    const mockLyricsQuery = `track.lyrics.get?track_id=${trackId}&apikey=${key}`
     const url = BASE_URL + mockLyricsQuery
 
     fetchMock.getOnce(url, {

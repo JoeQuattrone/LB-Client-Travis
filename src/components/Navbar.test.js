@@ -8,7 +8,6 @@ Enzyme.configure({ adapter: new Adapter() })
 describe('Navbar', () => {
   it('have class of "nav-wrapper"', () => {
     const wrapper = shallow(<Navbar/>)
-
-    expect(wrapper.find('div').hasClass('nav-wrapper')).toBe(true)
+    expect(wrapper.find('.brand-logo').text()).toBe('LyricBunny')
   })
 })
