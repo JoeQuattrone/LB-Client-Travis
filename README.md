@@ -1,5 +1,5 @@
 # LyricBunny
-LyricBunny is a lyric-searching website built with React and utilizes a Rails API. Type in the name of any song and LyricBunny will find and present its lyrics (30% of the lyrics due to MusixMatch's API license). In addition to presenting lyrics, LyricBunny offers a "like" functionality that persists to the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) database. This feature allows LyricBunny to store data for the "most liked songs" and present it. The [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) repo is essential for the full functionality of LyricBunny so you will be asked to clone it in the upcoming directions.
+A lyric-searching website built with React that utilizes a Rails API. Type in the name of any song and LyricBunny will find and present its lyrics (30% of the lyrics due to MusixMatch's API license). In addition to presenting lyrics, LyricBunny offers a "like" functionality that persists to the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) database. This feature allows LyricBunny to store data for the "most liked songs" and present it. The [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) repo is essential for the full functionality of LyricBunny so you will be asked to clone it in the upcoming directions.
 
 ## Preview
 
@@ -15,8 +15,8 @@ I built this application to implement a wide-range of my skills as a React devel
 ### Prerequisites
 
 ```
-[NodeJS](https://nodejs.org/en/) - ^11.3.0
-[NPM](https://www.npmjs.com/) - ^6.4.1
+NodeJS - ^11.3.0
+NPM - ^6.4.1
 Yarn - ^1.15.2 (Alternative to NPM)
 ```
 
@@ -33,8 +33,8 @@ Go to [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README, f
 or
 `yarn start`
 
-If done correctly, you will be able to see the Most Liked Songs and Chart Topping Songs populated on the home page
 <img width="1146" alt="Screen Shot 2019-05-31 at 11 19 41 AM" src="https://user-images.githubusercontent.com/43793510/58715984-13adc880-8396-11e9-9c37-9e4bb3d12f60.png">
+**If done correctly, you will be able to see the Most Liked Songs and Chart Topping Songs populated on the home page**
 
 ## Running the tests
 To run test run the following commands:
@@ -53,7 +53,7 @@ describe('<SongSearch />', () => {
     expect(wrapper.state().songTitle).toEqual('')
   })
 ```
-This test verifies that the component <SongSearch /> has an initial state of `{songTitle: ""}``
+This test verifies that the component *SongSearch* has an initial state of `{songTitle: ""}`
 
 ## Deployment
 *In order to deploy LyricBunny, you must first deploy the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) API (See instructions on [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README).*
