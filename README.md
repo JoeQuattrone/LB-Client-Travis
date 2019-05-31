@@ -1,4 +1,5 @@
 # LyricBunny
+LyricBunny is a lyric-searching website built with React and utilizes a Rails API. Type in the name of any song and LyricBunny will find and present its lyrics (30% of the lyrics due to MusixMatch's API license). In addition to presenting lyrics, LyricBunny offers a "like" functionality that persists to the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) database. This feature allows LyricBunny to store data for the "most liked songs" and present it. The [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) repo is essential for the full functionality of LyricBunny so you will be asked to clone it in the upcoming directions.
 
 ## Preview
 
@@ -6,30 +7,16 @@
 
  [View live website](https://lyricbunny.herokuapp.com/)
 
- [View brief video explaining LyricBunny](https://www.youtube.com/watch?v=1iLZerSznxk&t=2s)
-
-## What LyricBunny Is
-LyricBunny is a lyric-searching website. Type in the name of any song and LyricBunny will find and present its lyrics (30% of the lyrics due to MusixMatch's API license). In addition to presenting lyrics, LyricBunny offers a "like" functionality that persists to the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) database. This feature allows LyricBunny to store data for the "most liked songs" and present it. The [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) repo is essential for the full functionality of LyricBunny so you will be asked to clone it in the upcoming directions.
-
 ## Why I Built It
-I built this application to implement a wide-range of my skills as a React developer in a fun and practical way. LyricBunny showcases many features and technologies of React Development. It contains technologies such as:
-
-* `React-Router` - routing in React
-* `Redux` - global state management
-* `Thunk` - asynchronous dispatching
-* `Enzyme` - Unit/Integration testing
-
-Along with many more technologies.
+I built this application to implement a wide-range of my skills as a React developer in a fun and practical way. LyricBunny showcases many features and technologies of React Development.
 
 ## Getting Started
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-NodeJS - ^11.3.0
-NPM - ^6.4.1
+[NodeJS](https://nodejs.org/en/) - ^11.3.0
+[NPM](https://www.npmjs.com/) - ^6.4.1
 Yarn - ^1.15.2 (Alternative to NPM)
 ```
 
@@ -56,19 +43,24 @@ or
 `yarn test`
 
 ### Break down into unit tests
-These tests test isolated functionality inside LyricBunny.
+These test isolated functionality inside LyricBunny.
 
-An action test
+A simple unit test
 ```
-Example
+describe('<SongSearch />', () => {
+  it('has default state {songTitle: ""}', () => {
+    const wrapper = shallow(<SongSearch />)
+    expect(wrapper.state().songTitle).toEqual('')
+  })
 ```
+This test verifies that the component <SongSearch /> has an initial state of `{songTitle: ""}``
 
 ## Deployment
-In order to deploy LyricBunny, you must first deploy the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) API (See instructions on [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README).
+*In order to deploy LyricBunny, you must first deploy the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) API (See instructions on [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README).*
 
 To deploy this application, you must change all API requests from localhost to the API's web address.
 
-example
+Example:
  ```
  http://localhost:3001/popular_songs
  to
@@ -83,7 +75,7 @@ example
 
 ## Authors
 
-* **Joe Quattrone** - *Initial work* - [Website](http://joequattrone.com)
+* **Joe Quattrone** - *Initial work* - [Portfolio](http://joequattrone.com)
 
 ## License
 
