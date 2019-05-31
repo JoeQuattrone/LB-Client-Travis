@@ -31,14 +31,13 @@ What things you need to install the software and how to install them
 NodeJS - ^11.3.0
 NPM - ^6.4.1
 Yarn - ^1.15.2 (Alternative to NPM)
-
 ```
 
 ### Installing
-```
-npm install or yarn install
+`npm install`
+or
+`yarn install`
 
-```
 ### Database/API Setup
 Go to [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README, follow the instructions, then come back here.
 
@@ -62,11 +61,10 @@ These tests test isolated functionality inside LyricBunny.
 An action test
 ```
 Example
-
 ```
 
 ## Deployment
-In order to deploy LyricBunny, you must first deploy the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) API (See instructions on [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README').
+In order to deploy LyricBunny, you must first deploy the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) API (See instructions on [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README).
 
 To deploy this application, you must change all API requests from localhost to the API's web address.
 
@@ -75,13 +73,18 @@ example
  http://localhost:3001/popular_songs
  to
  https://yourappname.com/popular_songs
-
 ```
 
-  ## Built With
+## Built With
+* [React](https://reactjs.org/) - The web framework used
+* [Redux](https://redux.js.org) - Global state management
+* [Thunk](https://github.com/reduxjs/redux-thunk) - Middleware for Redux
+* [Enzyme](https://github.com/airbnb/enzyme) - Testing utilities for React
 
+## Authors
 
+* **Joe Quattrone** - *Initial work* - [Website](http://joequattrone.com)
 
+## License
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
