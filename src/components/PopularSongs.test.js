@@ -16,7 +16,5 @@ describe('<PopularSongs />', () => {
     const store = mockStore({})
     const wrapper = shallow(<PopularSongs fetchPopularSongs={jest.fn()}/>)
     expect(wrapper.props().popularSongs).toBe.defined;
-    expect(wrapper.props().popularSongs).toBeCalled
-    expect(wrapper.props().fetchPopularSongs).toBeCalled
   })
 })
