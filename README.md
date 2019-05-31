@@ -11,6 +11,8 @@ A lyric-searching website built with React that utilizes a Rails API. Type in th
 I built this application to implement a wide-range of my skills as a React developer in a fun and practical way. LyricBunny showcases many features and technologies of React Development.
 
 ## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 
 ### Prerequisites
 
@@ -26,16 +28,16 @@ or
 `yarn install`
 
 ### Database/API Setup
-Go to [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README, follow the instructions, then come back here.
+Go to [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README, follow the instructions, then come back here and start the next step.
 
-### 3. Start The Server With:
+### Start The Server With:
 `npm start`
 or
 `yarn start`
 
 <img width="1146" alt="Screen Shot 2019-05-31 at 11 19 41 AM" src="https://user-images.githubusercontent.com/43793510/58715984-13adc880-8396-11e9-9c37-9e4bb3d12f60.png">
 
-If done correctly, you will be able to see the Most Liked Songs and Chart Topping Songs populated on the home page
+If done correctly, you will be able to the **Chart Topping Songs** populated on the home page
 
 ## Running the tests
 To run test run the following commands:
