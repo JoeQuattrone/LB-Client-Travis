@@ -8,7 +8,7 @@ import fetchMock from 'fetch-mock'
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
 const BASE_URL = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/"
-const key = process.env.REACT_APP_API_KEY
+const key = '523ebe747e1a258aaddd09f97f90cb70'
 
 
 
