@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('Navbar', () => {
-  it('have class of "nav-wrapper"', () => {
+  it('has text of `LyricBunny`', () => {
     const wrapper = shallow(<Navbar/>)
     expect(wrapper.find('.brand-logo').text()).toBe('LyricBunny')
   })

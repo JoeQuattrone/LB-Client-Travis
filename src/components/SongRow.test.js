@@ -1,7 +1,8 @@
 import React from 'react'
-import Enzyme, { render, shallow, mount } from 'enzyme'
+import Enzyme, { render, shallow, mount, instance } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import SongRow from './SongRow'
+import sinon from "sinon";
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -11,8 +12,13 @@ describe('<SongRow />', () => {
 
   // can't mount SongRow because of link from songcard
   it('maps over songs and renders <SongCard />', () => {
-    const wrapper = shallow(<SongRow songs={songs}/>)
-    expect(wrapper.props().songs).toBe.defined;
-    expect(wrapper.mapSongs).toBeCalled
+    const spy = sinon.spy
+    const wrapper = shallow(<SongRow songs={songs} />)
+    expect(wrapper.props().children[0]).toContain(songs[0]);
+
+    const instance = wrapper.instance()
+    instance.mapSongs()
+
+    expect(spy.called).toBe(true)
   })
 })

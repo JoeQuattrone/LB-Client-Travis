@@ -15,8 +15,11 @@ import { shape } from 'prop-types';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-// const mockStore = configureMockStore()
+const middlewares = [thunk]
+const mockStore = configureMockStore(middlewares)
 
+
+// attempt to fix Link error below
 // const options = {
 //   context: {
 //     router: {
@@ -57,13 +60,20 @@ const songs = [{track_name: "Lose Yourself", artist_name: "Eminem", genre: 'rap'
 describe('<PopularSongs />', () => {
   it('Dispatches a fetch request to collect popular songs on componentDidMount()', () => {
     let spy = sinon.spy()
-    let store = createStore(songsReducer)
-    store.dispatch({type: 'ADD_SONG', loading: false, songs: songs})
     const wrapper = mount(<PopularSongs fetchPopularSongs={spy}/>)
 
     expect(spy.called).toBe(true);
   })
 
+  it('It stores popular songs in Redux store', () => {
+    let store = mockStore(songsReducer)
+    store.dispatch({type: 'ADD_SONG', loading: false, songs: songs})
+
+    const actions = store.getActions()[0]
+    expect(actions.songs).toEqual(songs)
+  })
+
+  // Attempt to mount popular songs and test SongRow is rendered
   // Error: Uncaught [Error: Invariant failed: You should not use <Link> outside a <Router>]
   // it('connects to Redux store and renders <SongRow />', () => {
   //   let store = createStore(songsReducer)
