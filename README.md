@@ -28,7 +28,7 @@ or
 `yarn install`
 
 ### Database/API Setup
-Go to [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README, follow the instructions, then come back here and start the next step.
+Go to [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis)'s README, follow the instructions, then come back here and continue on to the next step.
 
 ### Start The Server With:
 `npm start`
