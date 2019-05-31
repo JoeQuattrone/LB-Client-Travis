@@ -1,4 +1,4 @@
-# LyricBunny
+# LyricBunny [![Build Status](https://travis-ci.org/JoeQuattrone/LB-Client-Travis.svg?branch=master)](https://travis-ci.org/JoeQuattrone/LB-Client-Travis)
 A lyric-searching website built with React that utilizes a Rails API. Type in the name of any song and LyricBunny will find and present its lyrics (30% of the lyrics due to MusixMatch's API license). In addition to presenting lyrics, LyricBunny offers a "like" functionality that persists to the [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) database. This feature allows LyricBunny to store data for the "most liked songs" and present it. The [LB-API-Travis](https://github.com/JoeQuattrone/LB-API-Travis) repo is essential for the full functionality of LyricBunny so you will be asked to clone it in the upcoming directions.
 
 ## Preview
