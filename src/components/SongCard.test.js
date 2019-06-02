@@ -7,10 +7,11 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe('<SongCard />', () => {
   const song = {track_name: "Lose Yourself", artist_name: "Eminem", genre: 'rap', likes: 5}
+  const initialState = {liked: false, likes: song.likes}
 
-  it('has initial state', () => {
+  it('has initial state that sets `liked` to false', () => {
     const wrapper = shallow(<SongCard song={song}/>)
-    expect(wrapper.state()).toEqual({liked: false, likes: song.likes})
+    expect(wrapper.state()).toEqual(initialState)
   })
 
   it('renders the song name, artist name, genre, and likes for a given song', () => {

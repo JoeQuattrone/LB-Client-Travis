@@ -1,7 +1,6 @@
 import React from 'react'
 import SongCard from './SongCard'
-import logo from '../images/Ajax-loader.gif'
-
+import loading from '../images/Ajax-loader.gif'
 
 class TrendingSongs extends React.Component {
   state = {
@@ -25,7 +24,7 @@ class TrendingSongs extends React.Component {
       <>
         <h4 className="home-heading">Most liked songs</h4>
         {
-          this.state.trendingSongs.length === 0 ? <div className="center"><img src={logo} alt="loading img"/></div>
+          this.state.trendingSongs.length === 0 ? <div className="center"><img src={loading} alt="loading img"/></div>
         :
           <div className="row white-row">{this.renderTrendingSongs()}</div>
         }

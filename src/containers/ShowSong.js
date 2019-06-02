@@ -4,20 +4,19 @@ import { fetchLyrics } from '../actions/songActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import logo from '../images/Ajax-loader.gif'
-
+import loading from '../images/Ajax-loader.gif'
 
 
 class ShowSong extends React.Component {
   state = {
     liked: false,
   }
-// save lyrics in api via like and check my api before fetch
+// save lyrics in API via like and check API before fetch
   componentDidMount() {
     this.props.fetchLyrics(this.props.match.params.songId)
   }
 
-  //persist to rails api
+  // persist to rails api
   likeSong = (e) => {
     if (this.state.liked === false) {
       this.setState({
@@ -64,7 +63,7 @@ chooseSong = () => {
         <div>
         {
           this.props.loading?
-          <div className="center"><img src={logo} alt="loading img" /></div>
+          <div className="center"><img src={loading} alt="loading img" /></div>
           :
           <p>{lyrics ? lyrics.lyrics_body : null}</p>
         }

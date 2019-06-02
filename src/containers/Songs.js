@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ListSong from '../components/Songs/ListSong'
-import logo from '../images/Ajax-loader.gif'
+import loading from '../images/Ajax-loader.gif'
 
 class Songs extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Songs extends React.Component {
           <h6 id="tracks-title">TRACKS</h6>
           {
             this.props.loading?
-            <div className="center"><img src={logo} alt="loading img" /></div>
+            <div className="center"><img src={loading} alt="loading img" /></div>
             :
             <div className="row search-results-container">{this.listSongs()}</div>
           }

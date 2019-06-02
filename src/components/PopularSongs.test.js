@@ -12,7 +12,6 @@ Enzyme.configure({ adapter: new Adapter() })
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
-
 const songs = [{1: "song1"}, {2: "song2"}, {3: "song3"}, {4: "song4"}, {5: "song5"}, {6: "song6"}]
 
 describe('<PopularSongs />', () => {

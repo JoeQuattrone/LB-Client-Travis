@@ -22,7 +22,7 @@ describe('<SongSearch />', () => {
     expect(wrapper.state().songTitle).toBe("Lose Yourself");
   });
 
-  it("should call the `searchSongs` callback prop when the form is being submitted", () => {
+  it("should call the `searchSongs` callback prop when the form is submitted", () => {
       let spy = sinon.spy()
       const wrapper = shallow(<SongSearch searchSongs={spy} />);
       wrapper.find("#home-searchbar").simulate("change", {
