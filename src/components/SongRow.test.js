@@ -17,7 +17,7 @@ describe('<SongRow />', () => {
   it('maps over songs and renders <SongCard />', () => {
     const wrapper = shallow(<SongRow songs={songs} />)
     const expected = <SongCard song={songs[0]} key={0}/>
-
+    
     expect(wrapper.props().children[0]).toEqual(expected);
   })
 })
