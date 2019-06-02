@@ -46,7 +46,7 @@ or
 `yarn test`
 
 ### Break down into unit tests
-These test isolated functionality inside LyricBunny.
+These test utilize the [Jest](https://jestjs.io/en/) framework and [Enzyme](https://github.com/airbnb/enzyme) to test isolated functionality inside LyricBunny.
 
 A simple unit test:
 ```
