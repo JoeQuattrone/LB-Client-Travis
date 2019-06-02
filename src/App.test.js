@@ -19,7 +19,3 @@ it('renders without crashing', () => {
     div
   );
 });
-
-it('expects true to equal true', () => {
-  expect(true).toBe(true)
-})

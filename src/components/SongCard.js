@@ -35,7 +35,6 @@ class SongCard extends React.Component {
     }
   }
 
-
   render() {
     const song = this.props.song.track ? this.props.song.track : this.props.song
 

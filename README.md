@@ -65,9 +65,9 @@ To deploy this application, you must change all API requests from localhost to t
 
 Example:
  ```
- http://localhost:3001/popular_songs
+ fetch('http://localhost:3001/popular_songs')
  to
- https://yourappname.com/popular_songs
+ fetch('https://yourappname.com/popular_songs')
 ```
 
 ## Built With
