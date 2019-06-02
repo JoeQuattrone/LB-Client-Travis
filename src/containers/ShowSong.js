@@ -36,9 +36,10 @@ class ShowSong extends React.Component {
       })
     }
   }
-
+// find songs from redux store
 findSong = () => this.props.songs.find(song => song.track.track_id === parseInt(this.props.match.params.songId))
 
+// find songs from SongCard link
 findSongFromLocation = () => this.props.location.state ? {track: this.props.location.state.song} : null
 
 chooseSong = () => {
