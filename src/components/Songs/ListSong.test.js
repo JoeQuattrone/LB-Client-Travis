@@ -10,7 +10,8 @@ describe('<ListSong />', () => {
 
   it('renders the name of the song and link to the song', () => {
     const wrapper = shallow(<ListSong song={song} link={'https://example.com'}/>)
-    expect(wrapper.find('Link').hasClass('song-link')).toBe(true)
+    expect(wrapper.exists('Link')).toBe(true)
+    expect(wrapper.find('Link').props().to).toEqual('https://example.com')
     expect(wrapper.find('p').text()).toEqual(song.track.artist_name)
   })
 })
