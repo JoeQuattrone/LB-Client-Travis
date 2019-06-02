@@ -7,12 +7,15 @@ class TrendingSongs extends React.Component {
     trendingSongs: []
   }
 
-  componentDidMount() {
+  fetchTrendingSongs = () => {
     fetch('http://localhost:3001/trending_songs')
       .then(res => res.json())
       .then(json => this.setState({
         trendingSongs: json
       }))
+  }
+  componentDidMount() {
+    this.fetchTrendingSongs()
   }
 
   renderTrendingSongs = () => {
