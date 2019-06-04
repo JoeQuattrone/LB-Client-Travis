@@ -6,7 +6,6 @@ import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import loading from '../images/Ajax-loader.gif'
 
-
 class ShowSong extends React.Component {
   state = {
     liked: false,

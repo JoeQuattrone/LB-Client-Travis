@@ -36,8 +36,7 @@ class SongCard extends React.Component {
   }
 
   render() {
-    const song = this.props.song.track ? this.props.song.track : this.props.song
-
+    const song = this.props.song
     return (
       <div className="col s12 m6 l4">
         <div className="card">
@@ -48,6 +47,7 @@ class SongCard extends React.Component {
             }} >
             <div className="card-content white-text">
               <span className="card-title">{song.track_name}</span>
+              {console.log(this.props.song)}
               <p>{song.artist_name}</p>
               <p>{song.genre}</p>
               <p>{this.state.likes} likes</p>
