@@ -4,10 +4,17 @@ import Adapter from 'enzyme-adapter-react-16'
 import TrendingSongs  from './TrendingSongs'
 import SongCard from './SongCard'
 import sinon from "sinon";
+import thunk from 'redux-thunk'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 const song = {track_name: "Lose Yourself", artist_name: "Eminem", genre: 'rap', likes: "5 likes"}
+
+const songs = [
+  {artist_name: "Eminem", track_name: "Lose Yourself"},
+  {artist_name: "Daft Punk feat. Pharrell Williams", track_name: "Lose Yourself to Dance"},
+  {artist_name: "Daft ", track_name: "Song 3"}
+]
 
 describe('<TrendingSongs />', () => {
   const songs = [{track_name: "Lose Yourself", artist_name: "Eminem", genre: 'rap', likes: "5 likes"}, {track_name: "Lose Yourself to Dance", artist_name: "Calvin Harriss", genre: 'EDM', likes: "6 likes"}]
