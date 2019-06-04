@@ -24,7 +24,7 @@ class ShowSong extends React.Component {
       })
 
       let data = {
-        song: this.chooseSong(this.findSong(), this.findSongFromLocation())
+        song: this.chooseSong()
       }
       fetch('http://localhost:3001/update_likes', {
         method: "POST",
