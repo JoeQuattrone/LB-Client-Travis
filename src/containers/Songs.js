@@ -4,15 +4,7 @@ import ListSong from '../components/Songs/ListSong'
 import loading from '../images/Ajax-loader.gif'
 
 class Songs extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      songs: [],
-      songTitle: ""
-    }
-  }
-
+  // maps over songs in redux and return <ListSong /> components
   listSongs = () => {
     return(
       this.props.songs.map(song => <ListSong key={song.track.track_id} song={song} link={`${this.props.match.url}/${song.track.track_id}`} />)
@@ -40,6 +32,6 @@ const mapStateToProps = (state) => {
   return {songs: state.songsReducer.songs}
 }
 
-Songs.defaultProps = {songs: []}
+// Songs.defaultProps = {songs: []}
 
 export default connect(mapStateToProps)(Songs)

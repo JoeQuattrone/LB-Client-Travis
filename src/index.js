@@ -9,8 +9,6 @@ import reducer from './reducers/index'
 import Navbar from './components/Navbar'
 require('dotenv').config()
 
-
-
 const store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(

@@ -4,23 +4,12 @@ import { connect } from 'react-redux'
 import { fetchSongs } from '../actions/songActions'
 import TrendingSongs from '../components/TrendingSongs'
 import PopularSongs from '../components/PopularSongs'
+
 class Home extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      songTitle: ""
-    }
-  }
-
 // fetch songs and save song title to state
   searchSongs = (state) => {
     localStorage.setItem("songTitle", state.songTitle)
     this.props.fetchSongs(state, this.props.history)
-    this.setState({
-      ...state,
-      songTitle: state.songTitle
-    })
   }
 
   render() {

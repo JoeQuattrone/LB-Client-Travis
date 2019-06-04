@@ -11,7 +11,7 @@ class ShowSong extends React.Component {
   state = {
     liked: false,
   }
-// save lyrics in API via like and check API before fetch
+
   componentDidMount() {
     this.props.fetchLyrics(this.props.match.params.songId)
   }
@@ -47,26 +47,29 @@ chooseSong = () => {
 }
 
   render() {
-    let song = this.chooseSong()
+    // Use default song until chooseSong returns a song
+    let song = this.chooseSong() || this.props.song
     let lyrics = this.props.lyrics
     return (
       <div id="show-song-container" className="container">
         <h5 className="lyrics-title">Lyrics</h5>
         <div id="show-row" className="row">
-          <h2 className=" col s10 song-header">{song ? song.track.track_name :  null }</h2>
+          <h2 className=" col s10 song-header">{song.track.track_name }</h2>
           <div className="col s2 heart-div">
-            {this.state.liked ?  <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon"  /></span>: <span onClick={e => this.likeSong(e)}><FontAwesomeIcon icon={farFaHeart}size="lg" className="heart-icon"  /></span>}
+            {this.state.liked ?  <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon"  /></span>
+            :
+            <span onClick={e => this.likeSong(e)}><FontAwesomeIcon icon={farFaHeart}size="lg" className="heart-icon"  /></span>}
           </div>
         </div>
 
-        <h4 id="show-artist-name">{song ? song.track.artist_name : null }</h4>
+        <h4 id="show-artist-name">{song.track.artist_name}</h4>
         <hr/>
         <div>
         {
           this.props.loading?
           <div className="center"><img src={loading} alt="loading img" /></div>
           :
-          <p>{lyrics ? lyrics.lyrics_body : null}</p>
+          <p>{lyrics.lyrics_body}</p>
         }
         </div>
       </div>
@@ -83,8 +86,9 @@ const mapStateToProps = (state) => {
 }
 
 ShowSong.defaultProps = {
+  song: {track: {artist_name: "", track_name: ""}},
   songs: [],
-  lyrics: ""
+  lyrics: {lyrircs_body: ""}
 }
 
 export default connect(mapStateToProps, { fetchLyrics })(ShowSong)
