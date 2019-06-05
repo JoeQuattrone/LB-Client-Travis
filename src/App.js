@@ -12,7 +12,7 @@ import ErrorPage from './components/ErrorPage'
 class App extends React.Component {
   // Keeps songs in the redux store in case of refresh on 'Songs' and 'ShowSong' page.
   componentDidMount() {
-    if (localStorage.getItem("songTitle")) {
+    if (localStorage.getItem("songTitle") && window.history.state != null) {
       this.props.fetchSongs({songTitle: localStorage.getItem("songTitle")}, false)
     }
   }

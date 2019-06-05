@@ -29,10 +29,10 @@ describe('<PopularSongs />', () => {
 
   it('It stores popular songs in Redux store', () => {
     let store = mockStore(songsReducer)
-    store.dispatch({type: 'ADD_POPULAR_SONGS', loading: false, songs: songs})
+    store.dispatch({type: 'ADD_POPULAR_SONGS', loading: false, popularSongs: songs})
 
     const actions = store.getActions()[0]
-    expect(actions.songs).toEqual(songs)
+    expect(actions.popularSongs).toEqual(songs)
   })
 
   it('renders <SongRow /> twice', () => {
@@ -40,14 +40,4 @@ describe('<PopularSongs />', () => {
 
     expect(wrapper.find(SongRow)).toHaveLength(2)
   })
-
-  // it('renders songRow', () => {
-  //   const store = createStore(combineReducers, applyMiddleware(thunk))
-  //   store.dispatch({type: 'ADD_POPULAR_SONGS', loading: false, payload: songs})
-  //   store.dispatch({type: 'ADD_SONG', loading: false, payload: songs})
-  //   // const wrapper = mount(<Provider store={store}><App /></Provider>)
-  //   const wrapper = shallow(<PopularSongs fetchPopularSongs={jest.fn()} popularSongs={songs}/>)
-  //
-  //   expect(wrapper.find(SongRow).first().dive().find('.white-row')).toEqual('')
-  // })
 })

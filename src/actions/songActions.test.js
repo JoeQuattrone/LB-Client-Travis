@@ -81,13 +81,10 @@ describe('fetchLyrics action', () => {
   })
 })
 
-
-
 describe('fetchPopularSongs action', () => {
   afterEach(() => {
     fetchMock.restore()
   })
-
 
   it('uses redux-promise to create an action object with type of "ADD_POPULAR_SONGS" and a payload of popular songs when fetchPopularSongs is dispatched', () => {
     const url = 'http://localhost:3001/popular_songs'

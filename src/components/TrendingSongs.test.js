@@ -19,7 +19,7 @@ const songs = [
 describe('<TrendingSongs />', () => {
   it('Fetches Trending Songs on componentDidMount()', () => {
     sinon.spy(TrendingSongs.prototype, 'componentDidMount')
-    const wrapper = mount(<TrendingSongs />)
+    const wrapper = shallow(<TrendingSongs />)
     expect(TrendingSongs.prototype.componentDidMount.calledOnce).toEqual(true);
   })
 
@@ -38,8 +38,6 @@ describe('<TrendingSongs />', () => {
     process.nextTick(() => {
         expect(wrapper.state().trendingSongs).toEqual(songs)
       });
-
-
     global.fetch.mockClear();
   });
 
