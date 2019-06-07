@@ -102,12 +102,17 @@ Home
   background: white;
 }
 
+.row > .home-col {
+  padding: 0 1.25rem 0 0;
+}
+
 
 .card {
   background: #59748F;
   position: relative;
   top: 0;
   transition: top ease .2s;
+
 }
 
 .card:hover {

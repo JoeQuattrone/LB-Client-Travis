@@ -29,7 +29,7 @@ class SongSearch extends React.Component {
         <h3 id="home-title">Explore Our Enormous Database of Song Lyrics</h3>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <div className="row">
-            <div className="col s12">
+            <div className="col s12 home-col">
               <input id="home-searchbar" type="text" name="songTitle" onChange={(e) => this.handleChange(e)} placeholder="Type song title" value={this.state.songTitle}/>
               <input id="home-search-btn" type="submit" value="SEARCH" />
             </div>
