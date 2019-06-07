@@ -12,6 +12,7 @@ describe('<ListSong />', () => {
     const wrapper = shallow(<ListSong song={song} link={'https://example.com'}/>)
     expect(wrapper.exists('Link')).toBe(true)
     expect(wrapper.find('Link').props().to).toEqual('https://example.com')
+    expect(wrapper.find('Link').props().children).toEqual(song.track.track_name)
     expect(wrapper.find('p').text()).toEqual(song.track.artist_name)
   })
 })

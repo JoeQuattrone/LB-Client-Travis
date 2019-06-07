@@ -40,12 +40,4 @@ describe('<TrendingSongs />', () => {
       });
     global.fetch.mockClear();
   });
-
-  //  Error: Uncaught [Error: Invariant failed: You should not use <Link> outside a <Router>]. Link is erroring out the test.
-  // it('renders <SongCard />', () => {
-  //   const wrapper = mount(<TrendingSongs />)
-  //   wrapper.setState({ trendingSongs: songs})
-  //
-  //   expect(wrapper.find('.white-row')).toEqual('')
-  // })
 })

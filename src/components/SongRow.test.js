@@ -16,8 +16,10 @@ describe('<SongRow />', () => {
   // can't mount SongRow because of link from songcard
   it('maps over songs and renders <SongCard />', () => {
     const wrapper = shallow(<SongRow songs={songs} />)
-    const expected = <SongCard song={songs[0]} key={0}/>
-    
-    expect(wrapper.props().children[0]).toEqual(expected);
+    const songCard1 = <SongCard song={songs[0]} key={0}/>
+    const songCard2 = <SongCard song={songs[1]} key={1}/>
+
+    expect(wrapper.props().children[0]).toEqual(songCard1);
+    expect(wrapper.props().children[1]).toEqual(songCard2);
   })
 })
